@@ -9,6 +9,47 @@
 
 }
 
+.main-wrapper{
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar{
+    width: 175px;
+    background-color: var(--uu-navy);
+    color: var(--uu-gold);
+    padding:10px;
+    border-right: 2px solid var(--uu-gold);
+    position: sticky;
+    top:0;
+    height: 100vh;
+
+}
+
+.sidebar-logo{
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--uu-gold);
+}
+
+.sidebar-logo img{
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.content-heading-area{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 0px;
+}
+
 
 .top-header{
     background-color: var(--uu-navy);
@@ -16,7 +57,7 @@
     height:70px;
     padding: 10px;
     border: 1px solid var(--uu-gold);
-    margin-bottom: 10px;
+    
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -82,6 +123,7 @@ h3{
 .dashboard-grid {
     display: flex; 
     flex-wrap: wrap; 
+    justify-content: flex-start;
 }
 
 .tile-icon {
@@ -108,7 +150,7 @@ h3{
     height: 250px;
     background-size: cover;
     background-position: center;
-    display: flex;
+    display: block;
     justify-content: center;
     margin-bottom: 40px;
     animation : Slideshow 20s infinite;
