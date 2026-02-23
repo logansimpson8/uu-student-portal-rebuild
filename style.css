@@ -1,0 +1,117 @@
+* {
+    box-sizing:border-box;
+}
+
+:root{
+    --uu-navy: #060831;
+    --uu-gold: #b5a36a;
+    --uu-white: #ffffff;
+
+}
+
+
+.top-header{
+    background-color: var(--uu-navy);
+    width: 100%;
+    height:70px;
+    padding: 10px;
+    border: 1px solid var(--uu-gold);
+    margin-bottom: 10px;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #D3D3D3;
+    margin: 0;
+
+}
+
+h1{
+    width: 100%;
+    color: var(--uu-gold);
+    text-align: center;
+    padding: 0;
+    margin:0;
+
+}
+
+h2{
+    color: var(--uu-navy);
+    text-align: left;
+    padding: 10px;
+
+}
+
+h3{
+    color: var(--uu-navy);
+    text-align: left;
+    padding: 10px;
+
+}
+
+.tile{ 
+    height: 150px;
+    background-color: var(--uu-navy);
+    border-radius: 30px;
+    border: 5px solid var(--uu-gold);
+    margin: 10px;
+    flex: 1 1 200px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer; 
+    transition: 0.3s 
+    
+
+}
+
+.tile:hover { 
+    border-color: #ffffff;                     
+    transform: translateY(-7.5px);
+}
+
+.tile a { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--uu-white);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.tile-icon {
+    font-size: 2.5rem;
+    color: var(--uu-gold);
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.tile:hover .tile-icon{
+    transform: scale(1.2);
+    color: var(--uu-white);
+}
+
+@keyframes Slideshow {
+    0%, 24.9% {background-image : url("ulster-banner.webp"); }
+    25%, 49.9% {background-image : url("ulsterimg1.jpeg"); }
+    50%, 74.9% {background-image : url("ulsterimg2.jpeg"); }
+    75%, 100% {background-image : url("ulsterimg3.jpeg"); }
+}
+
+.hero-image{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    animation : Slideshow 20s infinite;
+    border: 1px solid var(--uu-gold);
+    border-radius: 30px;
+}
