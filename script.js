@@ -14,12 +14,9 @@ function setTheme(theme) {
         icon.classList.replace('fa-moon', 'fa-sun');
     }
 }
-
-// Check for saved theme on load
 const savedTheme = localStorage.getItem('portal-theme') || 'light';
 setTheme(savedTheme);
 
-// Toggle on click
 themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -131,3 +128,29 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
+
+const menuBtn = document.getElementById('mobile-menu-btn');
+const sidebar = document.querySelector('.sidebar');
+if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+    });
+}
+document.querySelectorAll('.sidebar-item').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            sidebar.classList.remove('active');
+        }
+    });
+});
+
+document.addEventListener('click', (event)=>{
+    const sidebar = document.querySelector('.sidebar');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+
+    if(sidebar.classList.contains('active')){
+        if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+            sidebar.classList.remove('active');
+            }
+    }
+})
