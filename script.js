@@ -1,6 +1,31 @@
 const stars = document.querySelectorAll(".fav-star");
 const favList = document.querySelector(".fav-list");
 
+
+const themeToggle = document.getElementById('theme-toggle');
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portal-theme', theme);
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+}
+
+// Check for saved theme on load
+const savedTheme = localStorage.getItem('portal-theme') || 'light';
+setTheme(savedTheme);
+
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+});
+
 window.addEventListener('load', () => {
     const savedFavs = localStorage.getItem('favs');
 
