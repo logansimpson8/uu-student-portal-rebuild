@@ -34,12 +34,21 @@
         <p id= "time-display">Monday, 23rd Febuary | 12:00:00</p>
     </div>
 
+    <div class = "search-feature">
+        <input type="text" id="tile-search" placeholder="Search...">
+    </div>
+
     <h2>Home - Quick Links</h2>
     
     <div class ="dashboard-grid">
-        <div class = "tile" data-name="Blackboard" data-link="https://blackboard.ulster.ac.uk">  
+
+        <div id="no-results" class="hidden-message">
+            <p>No Tiles found matching this search</p>
+        </div>
+
+        <div class = "tile" data-name="Blackboard" data-link="https://learning.ulster.ac.uk/ultra/stream">  
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://blackboard.ulster.ac.uk">
+            <a href="https://learning.ulster.ac.uk/ultra/stream">
                 <i class="fa-solid fa-graduation-cap tile-icon"></i>
                 <span class="tile-text">Blackboard ultra</span>
             </a>
@@ -61,11 +70,11 @@
             </a> 
         </div>
 
-        <div class = "tile" data-name="Student Records" data-link="https://banner.ulster.ac.uk"> 
+        <div class = "tile" data-name="Academic Calendar" data-link="https://www.ulster.ac.uk/student/calendar"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://banner.ulster.ac.uk">
-                <i class="fa-solid fa-id-card tile-icon"></i>
-                <span class="tile-text">Student Records</span>
+            <a href="https://www.ulster.ac.uk/student/calendar">
+                <i class="fa-solid fa-calendar-days tile-icon"></i>
+                <span class="tile-text">Academic Calendar</span>
             </a> 
         </div>
     </div>
@@ -74,9 +83,9 @@
 
     <div class ="dashboard-grid">
 
-        <div class = "tile" data-name="Blackboard" data-link="https://blackboard.ulster.ac.uk"> 
+        <div class = "tile" data-name="Blackboard" data-link="https://learning.ulster.ac.uk/ultra/stream"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://blackboard.ulster.ac.uk">
+            <a href="https://learning.ulster.ac.uk/ultra/stream">
                 <i class="fa-solid fa-graduation-cap tile-icon"></i>
                 <span class="tile-text">Blackboard ultra</span>
             </a></div>
@@ -95,11 +104,11 @@
                 <span class="tile-text">Library Services</span>
             </a> </div>
 
-        <div class = "tile" data-name="Student Records" data-link="https://banner.ulster.ac.uk"> 
+        <div class = "tile" data-name="Academic Calendar" data-link="https://www.ulster.ac.uk/student/calendar"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://banner.ulster.ac.uk">
-                <i class="fa-solid fa-id-card tile-icon"></i>
-                <span class="tile-text">Student Records</span>
+            <a href="https://www.ulster.ac.uk/student/calendar">
+                <i class="fa-solid fa-calendar-days tile-icon"></i>
+                <span class="tile-text">Academic Calendar</span>
             </a> </div>
 
     </div> </main>

@@ -78,3 +78,31 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+
+const searchInput = document.getElementById('tile-search');
+const allTiles = document.querySelectorAll('.tile');
+
+searchInput.addEventListener('input', (e) => {
+    const searchValue = e.target.value.toLowerCase(); 
+    let results = 0;
+
+    allTiles.forEach(tile => {
+        const tileName = tile.getAttribute('data-name').toLowerCase();
+        
+        if (tileName.includes(searchValue)) {
+            tile.style.display = "block";
+            results++;
+        } else {
+            tile.style.display = "none";
+        }
+    });
+
+    const noResults = document.getElementById('no-results');
+    if (results == 0){
+        noResults.style.display = 'block';
+    } else {
+        noResults.style.display = "none"
+    }
+});
+
