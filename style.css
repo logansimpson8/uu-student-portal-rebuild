@@ -12,11 +12,6 @@
 
 }
 
-html, body {
-    background-color: var(--uu-body);
-    color: var(--uu-body);
-}
-
 [data-theme = 'dark']{
     --uu-navy: #524419; 
     --uu-gold: black;
@@ -358,6 +353,24 @@ h4{
 
 
     }
+
+    .dashboard-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        padding: 10px;
+        flex-wrap: nowrap;
+    }
+    .tile{
+        margin: 0;
+        padding: 20px 10px;
+        min-height: 110px;
+        min-width: 0;
+        width: 100%
+
+    }
+
+
     .user-greeting{
         margin-top: 20px;
 
@@ -388,6 +401,18 @@ h4{
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     padding: 10px;
+    }
+
+    .sidebar.active ~ #mobile-menu-btn {
+        display: none
+    }
+
+    .fav-star {
+
+        font-size: 1.2rem; 
+        padding: 15px; 
+        top: 0;
+        right: 0;
     }
 
 }
