@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>UU Student Portal</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 </head>
 <body>
 
@@ -90,39 +91,91 @@
         </div>
     </div>
 
-    <h3> Courses and Modules - to update</h3>
+    <h2> Courses and Modules</h2>
 
     <div class ="dashboard-grid">
 
-        <div class = "tile" data-name="Blackboard" data-link="https://learning.ulster.ac.uk/ultra/stream"> 
+        <div class = "tile" data-name="BannerStudent" data-link="https://srssb.ulster.ac.uk/PROD/twbkwbis.P_WWWLogin"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://learning.ulster.ac.uk/ultra/stream">
-                <i class="fa-solid fa-graduation-cap tile-icon"></i>
-                <span class="tile-text">Blackboard ultra</span>
+            <a href="https://srssb.ulster.ac.uk/PROD/twbkwbis.P_WWWLogin">
+                <i class="fa-solid fa-id-card tile-icon"></i>
+                <span class="tile-text">Banner Student</span>
             </a></div>
 
-        <div class = "tile" data-name="Student Email" data-link="https://outlook.office.com"> 
+        <div class = "tile" data-name="OneDrive" data-link="https://onedrive.live.com/login"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://outlook.office.com">
-                <i class="fa-solid fa-envelope-open-text tile-icon"></i>
-                <span class="tile-text">Student Email</span>
+            <a href="https://onedrive.live.com/login">
+                <i class="fa-solid fa-cloud tile-icon"></i>
+                <span class="tile-text">OneDrive</span>
             </a> </div>
 
-        <div class = "tile" data-name="Library Services" data-link="https://library.ulster.ac.uk"> 
+        <div class = "tile" data-name="Modules Catalogue" data-link="https://webservices.ulster.ac.uk/modules/"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://library.ulster.ac.uk">
-                <i class="fa-solid fa-book-bookmark tile-icon"></i>
-                <span class="tile-text">Library Services</span>
+            <a href="https://webservices.ulster.ac.uk/modules/">
+                <i class="fa-solid fa-user-graduate tile-icon"></i>
+                <span class="tile-text">Modules Catalogue</span>
             </a> </div>
 
-        <div class = "tile" data-name="Academic Calendar" data-link="https://www.ulster.ac.uk/student/calendar"> 
+        <div class = "tile" data-name="Skills For Study" data-link="https://www.skillsforstudy.com/login/shibboleth"> 
             <i class="fa-regular fa-star fav-star"></i>
-            <a href="https://www.ulster.ac.uk/student/calendar">
+            <a href="https://www.skillsforstudy.com/login/shibboleth">
+                <i class="fa-solid fa-clipboard-check tile-icon"></i>
+                <span class="tile-text">Skills For Study</span>
+            </a> </div>
+
+    
+    </div> 
+
+    <h2>Services and Support</h2>
+    
+    <div class ="dashboard-grid">
+
+        <div id="no-results" class="hidden-message">
+            <p>No Tiles found matching this search</p>
+        </div>
+
+        <div class = "tile" data-name="Class Timetable" data-link="https://www.ulster.ac.uk/student/courses/timetabling">  
+            <i class="fa-regular fa-star fav-star"></i>
+            <a href="https://www.ulster.ac.uk/student/courses/timetabling">
                 <i class="fa-solid fa-calendar-days tile-icon"></i>
-                <span class="tile-text">Academic Calendar</span>
-            </a> </div>
+                <span class="tile-text">Class Timetable</span>
+            </a>
+        </div>
 
-    </div> </main>
+        <div class = "tile" data-name="Student Attendance" data-link="https://www.ulster.ac.uk/student/courses/attendance">
+            <i class="fa-regular fa-star fav-star"></i>
+            <a href="https://www.ulster.ac.uk/student/courses/attendance">
+                <i class="fa-solid fa-user-check tile-icon"></i>
+                <span class="tile-text">Student Attendance</span>
+            </a> 
+        </div>
+
+        <div class = "tile" data-name="Car Parks" data-link="https://www.ulster.ac.uk/carparks">
+            <i class="fa-regular fa-star fav-star"></i>
+            <a href="https://www.ulster.ac.uk/carparks">
+                <i class="fa-solid fa-car tile-icon"></i>
+                <span class="tile-text">Car Parks</span>
+            </a> 
+        </div>
+
+        <div class = "tile" data-name="IT Service Status" data-link="https://www.ulster.ac.uk/ds/help/service-status"> 
+            <i class="fa-regular fa-star fav-star"></i>
+            <a href="https://www.ulster.ac.uk/ds/help/service-status">
+                <i class="fa-solid fa-signal tile-icon"></i>
+                <span class="tile-text">IT Service Status</span>
+            </a> 
+        </div>
+
+        <div class = "tile" data-name="UU Campuses" data-link="https://www.ulster.ac.uk/campuses">
+            <i class="fa-regular fa-star fav-star"></i>
+            <a href="https://www.ulster.ac.uk/campuses">
+                <i class="fa-solid fa-building-columns tile-icon"></i>
+                <span class="tile-text">UU Campuses</span>
+            </a> 
+        </div>
+    </div>
+
+</main>
 </div>
 
 <script src="script.js"></script>

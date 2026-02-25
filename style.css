@@ -326,6 +326,13 @@ h4{
     display: none;
 }
 
+html, body{ /* to address white bottom on mobile */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none;
+}
+
 @media (max-width: 768px) {
     .dashboard-container {
         display:flex;
@@ -337,19 +344,24 @@ h4{
         justify-content: center;
 
 
-        top: 30px;
-        bottom: 20px;
-        position:sticky;
+        right:25px;
+        bottom: 25px;
+        position:fixed;
         z-index: 1500;
+        top: auto;
 
-        width: 90%;
+
+        width: 70px;
+        height: 70px;
         margin: 0px auto;
         padding: 15px;
 
         background-color: var(--uu-navy);
         color: var(--uu-white);
         border: 2px solid var(--uu-borders);
-        border-radius: 50px;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px var(--uu-navy);
+        bottom: calc(25px + env(safe-area-inset-bottom));
 
 
     }
@@ -360,6 +372,7 @@ h4{
         gap: 12px;
         padding: 10px;
         flex-wrap: nowrap;
+        padding-bottom:100px;
     }
     .tile{
         margin: 0;
@@ -382,10 +395,20 @@ h4{
     .sidebar {
     position:fixed;
     left: -100%;
-    width:250px;
+    width:175px;
     height:100%;
     transition: 0.3s ease;
     z-index: 2000;
+    padding-top: calc(20px + env(safe-area-inset-top));
+    padding: 10px;
+
+
+    }
+
+    body, main.wrapper{
+        min-height: 100vh;
+        min-height: -webkit-fill-avalible;
+
 
     }
 
@@ -396,6 +419,7 @@ h4{
     .mobile-only-element {
     display: block;
     }
+
 
     .dashboard-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
