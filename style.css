@@ -2,6 +2,16 @@
     box-sizing:border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    background-color: (--uu-white);
+}
+
+
 :root{
     --uu-navy: #060831;
     --uu-gold: #b5a36a;
@@ -13,7 +23,7 @@
 }
 
 [data-theme = 'dark']{
-    --uu-navy: #524419; 
+    --uu-navy: #68561e; 
     --uu-gold: black;
     --uu-white: black;
     --uu-body: rgb(29, 28, 28);
@@ -126,10 +136,46 @@
     font-weight: 500;
 }
 
+.hero-slider{
+    display:flex;
+    width: 300%;
+    height: 100%;
+    animation: slide-three 15s infinite;
+}
+
+.hero-slide{
+    width: 33.333%;
+    height: 100%;
+}
+
+.hero-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background-color: var(--uu-gold);
+    filter: brightness(100%);
+}
+
+.hero-container-box{
+    height: 180px;
+    overflow:hidden;
+    border: 2px solid var(--uu-borders);
+    border-radius: 15px;
+    margin-bottom:30px;
+}
+
+@keyframes slide-three {
+    0%, 28% { transform: translateX(0); }
+    33%, 61% { transform: translateX(-33.333%); }
+    66%, 95% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0); }
+}
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--uu-body);
+    background-color: var(--uu-white);
     margin: 0;
 
 }
@@ -229,32 +275,6 @@ h4{
     color: var(--uu-white);
 }
 
-@keyframes Slideshow {
-    0%, 24.9% {background-image : url("ulster-banner.webp"); }
-    25%, 49.9% {background-image : url("ulsterimg1.jpeg"); }
-    50%, 74.9% {background-image : url("ulsterimg2.jpeg"); }
-    75%, 100% {background-image : url("ulsterimg3.jpeg"); }
-}
-
-.hero-image{
-    width: 100%;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    display: block;
-    justify-content: center;
-    margin-bottom: 40px;
-    animation : Slideshow 20s infinite;
-    border: 1px solid var(--uu-gold);
-    border-radius: 30px;
-    filter: brightness(100%)
-}
-
-[data-theme="dark"] .hero-image{
-    filter: brightness(50%);
-}
-
-
 .sidebar-item{
     display: block;
     color: var(--uu-gold);
@@ -278,14 +298,22 @@ h4{
 }
 
 .search-feature {
+    position:relative;
     padding-left: 5px;
     margin-bottom: -10px;
     width: 100%;
     max-width:400px;
 }
 
-#tile-search::placeholder{
-    color: var(--uu-white);
+.search-icon{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--uu-gold);
+    pointer-events: none;
+    font-size: 1rem;
+
 }
 
 #tile-search {
@@ -338,6 +366,24 @@ html, body{ /* to address white bottom on mobile */
         display:flex;
         flex-direction: column;
     }
+
+    #greeting{
+        font-size: 1.6rem;
+    }
+
+    #time-display{
+        font-size: 0.9rem;
+    }
+
+    .h5{
+        font-size: 1.2rem;
+    }
+
+    .top-header{
+        height: 30px;
+        position: sticky;
+        z-index: 2000;
+    }
     #mobile-menu-btn{
         display:flex;
         align-items:center;
@@ -366,6 +412,10 @@ html, body{ /* to address white bottom on mobile */
 
     }
 
+    .hero-container-box{
+        margin-bottom: 0px;
+    }
+
     .dashboard-grid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -388,21 +438,34 @@ html, body{ /* to address white bottom on mobile */
         margin-top: 20px;
 
     }
-    .hero-image{
-        margin-bottom: 20px;
+
+    .hero-container{
+        height: 120px;
+        margin-top: 60px;
+    }
+
+    .hero-slider
+    .hero-slide
+    .hero-slide img{
+        height: 120px;
+        object-fit: cover;
+        filter: brightness(70%);
     }
 
     .sidebar {
     position:fixed;
+    top:0;
     left: -100%;
     width:175px;
-    height:100%;
+    height:100vh;
+    height:100dvh;
+    background-color: var(--uu-navy);
     transition: 0.3s ease;
     z-index: 2000;
     padding-top: calc(20px + env(safe-area-inset-top));
     padding: 10px;
-
-
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     }
 
     body, main.wrapper{
@@ -422,14 +485,11 @@ html, body{ /* to address white bottom on mobile */
 
 
     .dashboard-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5px;
+    padding: 0px;
     }
 
-    .sidebar.active ~ #mobile-menu-btn {
-        display: none
-    }
 
     .fav-star {
 
@@ -440,18 +500,5 @@ html, body{ /* to address white bottom on mobile */
     }
 
 }
-
-
-
-
-
-
-
-
-.hero-image {
-    height: 180px;
-    border-radius: 15px;
-}
-
 
 
